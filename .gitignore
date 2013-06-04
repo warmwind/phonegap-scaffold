@@ -1,0 +1,17 @@
+platform/ios/CordovaLib/build/
+platform/ios/build/
+platform/ios/cordova/console.log
+platform/ios/www
+platform/android/assets/www
+platform/android/bin/
+platform/android/gen/www/js/**/*.js
+.jhw-cache
+www/*.html
+www/js/index.js
+www/js/compiled
+.sass-cache
+www/css/compiled
+www/js/src/app.coffee
+platform/android/*.iml
+platform/android/gen
+platform/android/out

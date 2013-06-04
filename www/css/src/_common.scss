@@ -1,0 +1,63 @@
+$themeColor: #ff8533;
+$bgMainColor: #f0f0f0;
+$bgSubColor: #f6f5e9;
+$headerFontColor: #8c8b83;
+$headerFontSize: 18px;
+
+$screenWidth: 320px;
+$screenHeight: 480px;
+$headerHeight: 44px;
+
+.hidden{
+  display: none;
+}
+.clear-fix{
+  clear: both;
+}
+body, div{
+  font-family: 'Hiragino Sans GB';
+  font-size: 13px;
+}
+
+body{
+  background-color: $bgMainColor;
+  margin: 0;
+  padding: 0;
+}
+
+/* temp */
+body{
+  border:1px solid grey;
+  width:$screenWidth;
+  height:$screenHeight;
+}
+
+input, ol{
+  padding: 0;
+}
+
+div{
+  border-radius: 0;
+  -webkit-border-radius: 0;
+}
+
+.deleteicon{
+  position: relative;
+  span.active{
+    position: absolute;
+    display: block;
+    background-image: url("../../res/icon/ios/btn-delete-normal.png");
+    background-repeat: no-repeat;
+    cursor: pointer;
+    top: -30px;
+    left: 240px;
+    height: 20px;
+    width: 20px;
+    &.pressed {
+      background-image: url("../../res/icon/ios/btn-delete-pressed.png");
+    }
+  }
+  input{
+    padding-right: 45px;
+  }
+}

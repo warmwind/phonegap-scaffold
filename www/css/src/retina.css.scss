@@ -1,0 +1,17 @@
+form.login #auth_key {
+  -webkit-background-size: 14px 14px;
+  background-image: url('../../res/icon/ios/icon-people@2x.png');
+}
+form.login #password {
+  -webkit-background-size: 14px 14px;
+  background-image: url('../../res/icon/ios/icon-password@2x.png');
+}
+
+form.login .deleteicon span.active{
+  -webkit-background-size: 20px 20px;
+  background-image: url("../../res/icon/ios/btn-delete-normal@2x.png");
+  &.pressed {
+    background-image: url("../../res/icon/ios/btn-delete-pressed@2x.png");
+  }
+}
+
