@@ -50,21 +50,61 @@ require 'coffee-script'
 
 namespace :coffee do
 
-  desc 'Compiles and concatenates source coffeescript files'
+  desc 'Compile source coffeescript files'
   task :compile do
-    SRC_DIR = File.expand_path('../www/js/src', __FILE__)
-    COMPILED_DIR = File.expand_path('../www/js/compiled', __FILE__)
-    files = Dir.glob(File.join(SRC_DIR, '*.coffee'))
-    FileUtils.remove_dir COMPILED_DIR if Dir.exists? COMPILED_DIR
-    FileUtils.mkdir COMPILED_DIR
+    src_dir = File.expand_path('../www/js/src', __FILE__)
+    compiled_dir = File.expand_path('../www/js/compiled', __FILE__)
+    files = Dir.glob(File.join(src_dir, '*.coffee'))
+    FileUtils.remove_dir compiled_dir if Dir.exists? compiled_dir
+    FileUtils.mkdir compiled_dir
     files.each do |file|
       compiled_js = CoffeeScript.compile File.read(file), :bare => true
-      output_js = "#{COMPILED_DIR}/#{File.basename file, '.*'}.js"
+      output_js = "#{compiled_dir}/#{File.basename file, '.*'}.js"
       File.open(output_js, 'w+') { |f| f.write(compiled_js) }
       puts "#{output_js} created"
     end
   end
 end
 
-task :default => ['coffee:compile', 'jasmine:headless']
+require 'sass'
+
+namespace :scss do
+
+  desc 'Compile source scss files'
+  task :compile do
+    src_dir = File.expand_path('../www/css/src', __FILE__)
+    compiled_dir = File.expand_path('../www/css/compiled', __FILE__)
+    files = Dir.glob(File.join(src_dir, '*.css.scss'))
+    FileUtils.remove_dir compiled_dir if Dir.exists? compiled_dir
+    FileUtils.mkdir compiled_dir
+    files.each do |file|
+      compiled = `scss #{file}`
+      output = "#{compiled_dir}/#{File.basename file, '.*'}"
+      File.open(output, 'w+') { |f| f.write(compiled) }
+      puts "#{output} created"
+    end
+  end
+end
+
+require 'haml'
+
+namespace :haml do
+
+  desc 'Compile source haml files'
+  task :compile do
+    src_dir = File.expand_path('../www/view', __FILE__)
+    compiled_dir = File.expand_path('../www/', __FILE__)
+    files = Dir.glob(File.join(src_dir, '*.haml'))
+    files.each do |file|
+      compiled_html = `haml #{file}`
+      output_html = "#{compiled_dir}/#{File.basename file, '.*'}"
+      File.open(output_html, 'w+') { |f| f.write(compiled_html) }
+      puts "#{output_html} created"
+    end
+  end
+end
+
+task :compile_all => ['haml:compile', 'coffee:compile', 'scss:compile']
+
+task :default => ['compile_all', 'jasmine:headless']
 

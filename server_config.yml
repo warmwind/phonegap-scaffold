@@ -1,3 +1,3 @@
 development: 'http://localhost:3000'
 uat: 'http://www.uat.com'
-production: 'www.production.com'
+production: 'http://www.production.com'
