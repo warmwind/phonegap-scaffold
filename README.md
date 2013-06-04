@@ -2,19 +2,34 @@
 
 ## Prepare
 
+* Of course, you need to download phonegap package first.
 * If you want to build ios, make sure you have Xcode installed - with command line tools. 
 * If you want to build android, make sure you have latest android SDK installed. Set ANDROID_HOME in your environment and adb/android can be found in command line.
 * Install qt to run jasmine:headless. brew install qt 
 
-## How to use
+## How to use(Take IOS for example)
 
-```bash
-git clone git@github.com:warmwind/phonegap-scaffold.git
-cd phonegap-scaffold
-rake set_env
-rake
-open www/index.html
-```
+* Open index.html in browser
+
+  ```bash
+  git clone git@github.com:warmwind/phonegap-scaffold.git
+  cd phonegap-scaffold
+  rake set_env
+  rake
+  open www/index.html
+  ```
+* Open index.html in ios simulator. The following commands will open ios simulator and show index.html.
+  
+  Please replace PHONEGAP_PATH with your own path
+
+  ```bash
+  git clone git@github.com:warmwind/phonegap-scaffold.git
+  PHONEGAP_PATH/lib/ios/bin/create phonegap-scaffold/platform/ios package_name phonegap
+  cd phonegap-scaffold
+  rake set_env
+  rake
+  rake ios:run
+  ```
 
 ## Development
 
