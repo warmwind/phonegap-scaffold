@@ -6,6 +6,16 @@
 * If you want to build android, make sure you have latest android SDK installed. Set ANDROID_HOME in your environment and adb/android can be found in command line.
 * Install qt to run jasmine:headless. brew install qt 
 
+## How to use
+
+```bash
+git clone git@github.com:warmwind/phonegap-scaffold.git
+cd phonegap-scaffold
+rake set_env
+rake
+open www/index.html
+```
+
 ## Development
 
 ### Auto Compile
