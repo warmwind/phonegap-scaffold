@@ -1,4 +1,12 @@
 ## This is a scaffold for building phonegap application
+Phonegap is a tool to let developer build cross platform native mobile applciations using js/html/css. However, for morden web/UI developers, raw css/js/html are not preferable. We'd like to use scss/coffeescript/haml which are more efficient. 
+
+Searching sometime, I haven't found any mature solutions yet, So I create this repo to let developers start building phonegap using morden tech as fast as possiable. 
+
+It can
+* detect your changes and compile it at the same time
+* integrate jasmine as js test
+* help to ajust style in brower and deploy it automatically to simulator  
 
 ## Prepare
 
