@@ -17,15 +17,6 @@ It can
 
 ## How to use(Take IOS for example)
 
-* Open index.html in browser
-
-  ```bash
-  git clone git@github.com:warmwind/phonegap-scaffold.git
-  cd phonegap-scaffold
-  rake set_env
-  rake
-  open www/index.html
-  ```
 * Open index.html in ios simulator. The following commands will open ios simulator and show index.html.
   
   Please replace PHONEGAP_PATH with your own path
@@ -34,9 +25,21 @@ It can
   git clone git@github.com:warmwind/phonegap-scaffold.git
   PHONEGAP_PATH/lib/ios/bin/create phonegap-scaffold/platform/ios package_name phonegap
   cd phonegap-scaffold
+  bundle
   rake set_env
   rake
   rake ios:run
+  ```
+
+* Open index.html in browser
+
+  ```bash
+  git clone git@github.com:warmwind/phonegap-scaffold.git
+  bundle
+  cd phonegap-scaffold
+  rake set_env
+  rake
+  open www/index.html
   ```
 
 ## Development
