@@ -35,8 +35,8 @@ It can
 
   ```bash
   git clone git@github.com:warmwind/phonegap-scaffold.git
-  bundle
   cd phonegap-scaffold
+  bundle
   rake set_env
   rake
   open www/index.html
