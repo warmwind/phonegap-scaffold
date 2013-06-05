@@ -19,7 +19,7 @@ It can
 
 * Open index.html in ios simulator. The following commands will open ios simulator and show index.html.
   
-  Please replace PHONEGAP_PATH with your own path
+  Please replace *PHONEGAP_PATH* with your own path
 
   ```bash
   git clone git@github.com:warmwind/phonegap-scaffold.git
@@ -27,7 +27,7 @@ It can
   cd phonegap-scaffold
   bundle
   rake set_env
-  rake
+  rake compile_all
   rake ios:run
   ```
 
@@ -38,7 +38,7 @@ It can
   cd phonegap-scaffold
   bundle
   rake set_env
-  rake
+  rake compile_all
   open www/index.html
   ```
 
